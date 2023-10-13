@@ -26,6 +26,7 @@ public class Drivetrain extends SubsystemBase {
     leftmotors = new MotorControllerGroup(talon1, talon2);
     rightmotors = new MotorControllerGroup(talon5, talon6);
     differentialDrive = new DifferentialDrive(leftmotors, rightmotors);
+    leftmotors.setInverted(true);
   }
 
   @Override
