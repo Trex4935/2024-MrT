@@ -7,9 +7,11 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 // import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Extensions.FlippedDIO;
 import frc.robot.Extensions.Talon;
 
 public class Intake extends SubsystemBase {
@@ -17,12 +19,14 @@ public class Intake extends SubsystemBase {
   // Defining Motors, Motor
   WPI_TalonSRX talon3, talon4;
   public MotorControllerGroup intakeMotors;
+   public FlippedDIO sensor;
 
   public Intake() {
     talon3 = Talon.createDefaultTalon(3);
     talon4 = Talon.createDefaultTalon(4);
     intakeMotors = new MotorControllerGroup(talon3, talon4);
 
+    sensor = new FlippedDIO(0);
   }
 
   // Spins Motors to Collect Cube
@@ -32,7 +36,7 @@ public class Intake extends SubsystemBase {
 
   // Spins Motors to Eject- Score - Cube
   public void scoreCube() {
-    intakeMotors.set(-0.5);
+    intakeMotors.set(-0.75);
   }
 
   @Override
