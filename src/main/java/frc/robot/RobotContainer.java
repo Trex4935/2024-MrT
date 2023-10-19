@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+
 import frc.robot.subsystems.*;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -27,11 +28,13 @@ public class RobotContainer {
   private final Drivetrain m_Drivetrain = new Drivetrain();
   private final Intake m_Intake = new Intake();
 
+ 
+  
+
   // Replace with CommandPS4Controller or CommandJoystick if needed
-  private final CommandXboxController m_driverController =
-      new CommandXboxController(OperatorConstants.kDriverControllerPort);
-      private final CommandXboxController m_operatorController =
-      new CommandXboxController(1);
+  private final CommandXboxController m_driverController = new CommandXboxController(OperatorConstants.kDriverControllerPort);
+  private final CommandXboxController m_operatorController = new CommandXboxController(1);
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the trigger bindings
@@ -64,8 +67,9 @@ public class RobotContainer {
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
-    m_driverController.leftTrigger().whileTrue(Commands.startEnd(() -> m_Intake.collectCube(), () -> m_Intake.stopMotors(), m_Intake).until((m_Intake.sensor::get)));
-    m_driverController.rightTrigger().whileTrue(Commands.startEnd(() -> m_Intake.scoreCube(), () -> m_Intake.stopMotors(), m_Intake));
+
+    m_operatorController.leftTrigger().whileTrue(Commands.startEnd(() -> m_Intake.collectCube(), () -> m_Intake.stopMotors(), m_Intake).until((m_Intake.sensor::get)));
+    m_operatorController.rightTrigger().whileTrue(Commands.startEnd(() -> m_Intake.scoreCube(), () -> m_Intake.stopMotors(), m_Intake));
   }
 
   /**
