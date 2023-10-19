@@ -80,12 +80,12 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
     return Commands.sequence(
-      // The motors will move forward at 0.75 speed
+      // The motors will move forward at 0.75 and .735 speed
       Commands.run(() -> 
         m_Drivetrain.differentialDrive.tankDrive(-0.75, -0.735), m_Drivetrain)
-        // This will occur for 6 seconds
+        // This will occur for 2.5 seconds
         .withTimeout(2.5), 
-    // After the 6 seconds, the motors will stop
+    // After the 2.5 seconds, the motors will stop
     Commands.runOnce(() -> m_Drivetrain.stopMotors())); 
   }
 }
