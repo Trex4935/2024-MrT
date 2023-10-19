@@ -15,5 +15,11 @@ package frc.robot;
 public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
+
   }
+
+    public static final double h1 = 104;
+    public static final double h2 = 22.5;
+    public static final double angle1 = 22.5;
+
 }
