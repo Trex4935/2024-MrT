@@ -4,49 +4,50 @@
 
 package frc.robot.Extensions;
 
-import edu.wpi.first.networktables.NetworkTable;
+/* import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.Constants;
+import frc.robot.Constants; */
 
 public class Limelight {
-
+/* 
   public NetworkTableEntry tx;
   public NetworkTableEntry ty;
+  public NetworkTableEntry ta;
   public NetworkTable table;
-
+ */
   /** Creates a new Limelight. */
-  public Limelight() {
-  }
+ /*  public Limelight() {
+  } */
 
   // Pull TX from the limelight
-  public static double getLimelightX() {
+ /*  public static double getLimelightX() {
     return NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0.0);
-  }
+  } */
 
   // Pull TY from the limelight
-  public static double getLimelightY() {
+ /*  public static double getLimelightY() {
 
     return NetworkTableInstance.getDefault().getTable("limelight").getEntry("ty").getDouble(0.0);
 
-  }
+  } */
 
   // Pull tv from the limelight
-  public static boolean getLimelightA() {
+/*   public static boolean getLimelightA() {
     if (NetworkTableInstance.getDefault().getTable("limelight").getEntry("ta").getDouble(0.0) > 0.075) {
       return true;
     } else {
       return false;
     }
-  }
+  } */
 
   // Distance to the target
-  public static double getDistance() {
+  /* public static double getDistance() {
     double angle2 = getLimelightY();
     double distance = (Constants.h2 - Constants.h1) / Math.tan(Math.toRadians(Constants.angle1 + angle2)) + 24;
     SmartDashboard.putNumber("Distance Limelight", distance);
     SmartDashboard.putNumber("Angle Limelight", angle2);
     return distance;
-  }
+  } */
 }

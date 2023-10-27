@@ -10,6 +10,8 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Extensions.Talon;
+import edu.wpi.first.util.sendable.SendableBuilder;
+import edu.wpi.first.wpilibj.DigitalInput;
 
 public class Drivetrain extends SubsystemBase {
   //Defining Motors, Motor Groups, and DifferentialDrive
@@ -37,5 +39,6 @@ public class Drivetrain extends SubsystemBase {
   public void stopMotors(){
     leftmotors.stopMotor();
     rightmotors.stopMotor();
+
   }
 }

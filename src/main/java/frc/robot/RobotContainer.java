@@ -14,7 +14,6 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-
 import frc.robot.subsystems.*;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -41,6 +40,8 @@ public class RobotContainer {
     configureBindings();
     //Declares type of command
     m_Drivetrain.setDefaultCommand(Commands.run(
+
+    
     
     //Executes Tank Drive using drivetrainController
     () -> m_Drivetrain.differentialDrive.tankDrive(m_driverController.getLeftY(), m_driverController.getRightY()),
